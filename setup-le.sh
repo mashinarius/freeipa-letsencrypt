@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 set -o nounset -o errexit
 
-WORKDIR="/root/ipa-le"
+WORKDIR="/opt/ipa-le"
 
 dnf install letsencrypt -y
 
