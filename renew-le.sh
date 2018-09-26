@@ -2,7 +2,7 @@
 set -o nounset -o errexit
 
 WORKDIR="/opt/ipa-le"
-EMAIL="mashinarius"
+EMAIL="mashinarius@gmail.com"
 #cd "$WORKDIR"
 
 ### cron
@@ -26,7 +26,7 @@ certutil -R -d /etc/httpd/alias/ -k Server-Cert -f /etc/httpd/alias/pwdfile.txt 
 service httpd stop
 
 # get a new cert
-letsencrypt certonly --standalone --csr "$WORKDIR/httpd-csr.der" --email "$EMAIL@gmail.com" --agree-tos
+letsencrypt certonly --standalone --csr "$WORKDIR/httpd-csr.der" --email "$EMAIL" --agree-tos
 
 # remove old cert
 certutil -D -d /etc/httpd/alias/ -n Server-Cert
