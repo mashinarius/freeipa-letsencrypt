@@ -26,7 +26,7 @@ certutil -R -d /etc/httpd/alias/ -k Server-Cert -f /etc/httpd/alias/pwdfile.txt 
 service httpd stop
 
 # get a new cert
-letsencrypt certonly --standalone --csr "$WORKDIR/httpd-csr.der" --email "$EMAIL" --agree-tos -n 
+letsencrypt certonly --standalone --csr "$WORKDIR/httpd-csr.der" --email "$EMAIL" --agree-tos -n --no-self-upgrade --noninteractive --quiet
 
 # remove old cert
 certutil -D -d /etc/httpd/alias/ -n Server-Cert
